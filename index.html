@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Emereese LLC — Enterprise Cloud Data Architecture & High-Performance Analytics</title>
+  <meta name="description" content="Emereese LLC provides high-throughput data pipeline engineering, dbt modeling, and executive Tableau visualization for enterprise systems.">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              dark: '#0B0F17',
+              card: '#161F30',
+              border: '#233148',
+              accent: '#38BDF8',
+              accentGlow: 'rgba(56, 189, 248, 0.15)'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .glass-card {
+      background: rgba(22, 31, 48, 0.7);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .glass-card:hover {
+      border-color: rgba(56, 189, 248, 0.4);
+      box-shadow: 0 0 25px rgba(56, 189, 248, 0.1);
+    }
+  </style>
+</head>
+<body class="bg-[#0B0F17] text-slate-200 antialiased font-sans selection:bg-sky-500 selection:text-white">
+
+  <!-- NAVIGATION BAR -->
+  <nav class="fixed top-0 w-full z-50 glass-card border-b border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <span class="text-2xl font-extrabold tracking-wider bg-clip-text text-transparent bg-gradient-to-r from-sky-400 via-indigo-300 to-white">
+          EMEREESE
+        </span>
+        <span class="text-xs px-2 py-0.5 rounded font-mono bg-sky-500/10 text-sky-400 border border-sky-500/20">LLC</span>
+      </div>
+      <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-300">
+        <a href="#services" class="hover:text-sky-400 transition-colors">Services</a>
+        <a href="#stack" class="hover:text-sky-400 transition-colors">Capabilities</a>
+        <a href="#engagement" class="hover:text-sky-400 transition-colors">Engagement Model</a>
+        <a href="mailto:contact@emereese.com" class="px-5 py-2.5 rounded-lg bg-sky-500 hover:bg-sky-400 text-slate-950 font-semibold transition-all shadow-lg shadow-sky-500/20">
+          Initiate Engagement
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section class="pt-36 pb-20 px-6 max-w-7xl mx-auto relative">
+    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass-card text-xs font-mono text-sky-400 border border-sky-500/30 mb-8">
+      <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+      Active Entity | C2C & 1099 Ready
+    </div>
+    
+    <h1 class="text-4xl md:text-6xl font-extrabold text-white tracking-tight leading-tight max-w-4xl">
+      Modern Cloud Data Architecture Built for <span class="bg-clip-text text-transparent bg-gradient-to-r from-sky-400 to-indigo-400">Speed & Scale</span>
+    </h1>
+    
+    <p class="mt-6 text-lg md:text-xl text-slate-400 max-w-2xl leading-relaxed">
+      Emereese LLC provides high-throughput data pipeline engineering, automated dbt modeling, and executive Tableau visualization for growth entities and enterprise platforms.
+    </p>
+
+    <div class="mt-10 flex flex-col sm:flex-row gap-4">
+      <a href="#services" class="inline-flex justify-center items-center px-6 py-3.5 rounded-xl bg-sky-500 hover:bg-sky-400 text-slate-950 font-semibold transition-all shadow-lg shadow-sky-500/20">
+        Explore Capabilities <i data-lucide="arrow-right" class="ml-2 w-4 h-4"></i>
+      </a>
+      <a href="mailto:contact@emereese.com" class="inline-flex justify-center items-center px-6 py-3.5 rounded-xl glass-card text-slate-200 hover:text-white hover:bg-slate-800/60 transition-all border border-slate-700/60">
+        Direct Inquiry
+      </a>
+    </div>
+
+    <!-- Trust / Highlights Bar -->
+    <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6 pt-10 border-t border-slate-800/60">
+      <div class="flex items-start space-x-3">
+        <i data-lucide="shield-check" class="w-6 h-6 text-sky-400 shrink-0 mt-1"></i>
+        <div>
+          <h4 class="text-sm font-semibold text-white">Turn-Key Entity Setup</h4>
+          <p class="text-xs text-slate-400 mt-1">Active EIN, dedicated business banking, and general liability coverage ready.</p>
+        </div>
+      </div>
+      <div class="flex items-start space-x-3">
+        <i data-lucide="layers" class="w-6 h-6 text-sky-400 shrink-0 mt-1"></i>
+        <div>
+          <h4 class="text-sm font-semibold text-white">Milestone-Driven SOWs</h4>
+          <p class="text-xs text-slate-400 mt-1">Evaluated on deliverable completion, quality, and pipeline performance.</p>
+        </div>
+      </div>
+      <div class="flex items-start space-x-3">
+        <i data-lucide="clock" class="w-6 h-6 text-sky-400 shrink-0 mt-1"></i>
+        <div>
+          <h4 class="text-sm font-semibold text-white">Asynchronous Execution</h4>
+          <p class="text-xs text-slate-400 mt-1">Off-peak sprint execution paired with full stakeholder sync availability.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CORE SERVICES GRID -->
+  <section id="services" class="py-20 px-6 max-w-7xl mx-auto">
+    <div class="mb-12">
+      <h2 class="text-xs font-mono text-sky-400 uppercase tracking-widest mb-2">Practice Areas</h2>
+      <h3 class="text-3xl font-bold text-white">Core Service Offerings</h3>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Card 1 -->
+      <div class="p-8 rounded-2xl glass-card transition-all duration-300">
+        <div class="w-12 h-12 rounded-xl bg-sky-500/10 border border-sky-500/20 flex items-center justify-center text-sky-400 mb-6">
+          <i data-lucide="database" class="w-6 h-6"></i>
+        </div>
+        <h4 class="text-xl font-bold text-white mb-3">Cloud Data Architecture</h4>
+        <p class="text-slate-400 text-sm leading-relaxed mb-6">
+          Enterprise Snowflake warehouse design, schema optimization, role-based security access frameworks, and cost-containment configurations.
+        </p>
+        <ul class="text-xs text-slate-300 space-y-2">
+          <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 text-sky-400 mr-2"></i> Snowflake Multi-Cluster Setup</li>
+          <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 text-sky-400 mr-2"></i> Row-Level & Dynamic Security</li>
+          <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 text-sky-400 mr-2"></i> Compute Cost Optimization</li>
+        </ul>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="p-8 rounded-2xl glass-card transition-all duration-300">
+        <div class="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 mb-6">
+          <i data-lucide="git-branch" class="w-6 h-6"></i>
+        </div>
+        <h4 class="text-xl font-bold text-white mb-3">Modern Pipeline & ETL</h4>
+        <p class="text-slate-400 text-sm leading-relaxed mb-6">
+          Production dbt data modeling, custom Python automation, SQL query tuning, and reliable API/webhook data integrations.
+        </p>
+        <ul class="text-xs text-slate-300 space-y-2">
+          <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 text-indigo-400 mr-2"></i> dbt Core & Cloud Modeling</li>
+          <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 text-indigo-400 mr-2"></i> Python Scripting & Automation</li>
+          <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 text-indigo-400 mr-2"></i> Automated Data Quality Testing</li>
+        </ul>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="p-8 rounded-2xl glass-card transition-all duration-300">
+        <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 mb-6">
+          <i data-lucide="bar-chart-3" class="w-6 h-6"></i>
+        </div>
+        <h4 class="text-xl font-bold text-white mb-3">Executive BI & Analytics</h4>
+        <p class="text-slate-400 text-sm leading-relaxed mb-6">
+          C-Suite Tableau visualization suites, Salesforce CRM analytics, and automated reporting systems tailored for rapid operational insight.
+        </p>
+        <ul class="text-xs text-slate-300 space-y-2">
+          <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 text-cyan-400 mr-2"></i> Enterprise Tableau Dashboards</li>
+          <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 text-cyan-400 mr-2"></i> Salesforce / CRM Analytics Integration</li>
+          <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 text-cyan-400 mr-2"></i> Financial & Threat Metrics Reporting</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- TECH STACK SHOWCASE -->
+  <section id="stack" class="py-16 px-6 max-w-7xl mx-auto border-t border-slate-800/60">
+    <div class="text-center mb-10">
+      <h3 class="text-sm font-mono text-slate-400 uppercase tracking-widest">Engineered With Proven Enterprise Technologies</h3>
+    </div>
+    <div class="flex flex-wrap justify-center gap-3 max-w-4xl mx-auto">
+      <span class="px-4 py-2 rounded-xl glass-card text-sm font-semibold text-slate-200 border border-slate-700/60">Snowflake</span>
+      <span class="px-4 py-2 rounded-xl glass-card text-sm font-semibold text-slate-200 border border-slate-700/60">dbt</span>
+      <span class="px-4 py-2 rounded-xl glass-card text-sm font-semibold text-slate-200 border border-slate-700/60">Python</span>
+      <span class="px-4 py-2 rounded-xl glass-card text-sm font-semibold text-slate-200 border border-slate-700/60">SQL / PostgreSQL</span>
+      <span class="px-4 py-2 rounded-xl glass-card text-sm font-semibold text-slate-200 border border-slate-700/60">Tableau</span>
+      <span class="px-4 py-2 rounded-xl glass-card text-sm font-semibold text-slate-200 border border-slate-700/60">Salesforce CRM</span>
+      <span class="px-4 py-2 rounded-xl glass-card text-sm font-semibold text-slate-200 border border-slate-700/60">AWS Cloud</span>
+      <span class="px-4 py-2 rounded-xl glass-card text-sm font-semibold text-slate-200 border border-slate-700/60">Security+ Certified</span>
+    </div>
+  </section>
+
+  <!-- ENGAGEMENT & DELIVERY MODEL -->
+  <section id="engagement" class="py-20 px-6 max-w-7xl mx-auto">
+    <div class="p-10 md:p-14 rounded-3xl glass-card relative overflow-hidden border border-slate-700/80">
+      <div class="max-w-3xl">
+        <h2 class="text-xs font-mono text-sky-400 uppercase tracking-widest mb-2">B2B Structure</h2>
+        <h3 class="text-3xl font-bold text-white mb-6">Designed for Seamless Contract Integration</h3>
+        <p class="text-slate-300 text-base leading-relaxed mb-8">
+          Emereese LLC operates on a strict Corp-to-Corp (C2C) and 1099 milestone-driven framework. We interface cleanly with your existing internal teams or vendor management platforms without adding management overhead.
+        </p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 text-sm">
+          <div class="flex items-start space-x-3">
+            <i data-lucide="check-circle-2" class="w-5 h-5 text-sky-400 shrink-0 mt-0.5"></i>
+            <span class="text-slate-300">Fixed-Scope Statements of Work (SOW)</span>
+          </div>
+          <div class="flex items-start space-x-3">
+            <i data-lucide="check-circle-2" class="w-5 h-5 text-sky-400 shrink-0 mt-0.5"></i>
+            <span class="text-slate-300">Night/Weekend Execution Options</span>
+          </div>
+          <div class="flex items-start space-x-3">
+            <i data-lucide="check-circle-2" class="w-5 h-5 text-sky-400 shrink-0 mt-0.5"></i>
+            <span class="text-slate-300">Dedicated Stakeholder Discovery Syncs</span>
+          </div>
+          <div class="flex items-start space-x-3">
+            <i data-lucide="check-circle-2" class="w-5 h-5 text-sky-400 shrink-0 mt-0.5"></i>
+            <span class="text-slate-300">Direct Vendor Portal Invoicing</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER / CONTACT CTA -->
+  <footer class="py-16 px-6 max-w-7xl mx-auto border-t border-slate-800/80 text-center">
+    <h3 class="text-2xl font-bold text-white mb-3">Ready to Discuss Your Data Infrastructure?</h3>
+    <p class="text-slate-400 text-sm mb-6">Send project specifications or requisition inquiries directly to our team.</p>
+    
+    <a href="mailto:contact@emereese.com" class="inline-flex items-center px-6 py-3 rounded-xl bg-sky-500 hover:bg-sky-400 text-slate-950 font-semibold transition-all shadow-lg shadow-sky-500/20">
+      <i data-lucide="mail" class="w-4 h-4 mr-2"></i> contact@emereese.com
+    </a>
+
+    <div class="mt-12 text-xs text-slate-500 font-mono">
+      © <span id="year"></span> Emereese LLC. All rights reserved. | emereese.com
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    lucide.createIcons();
+  </script>
+</body>
+</html>
