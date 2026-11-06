@@ -217,6 +217,10 @@
       text-decoration: none; border-bottom: 4px solid var(--signal-bright); padding-bottom: .15rem;
     }
     .email-link:hover { color: var(--signal); }
+    .email-row { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.5rem; margin-top: 2rem; }
+    .email-row .email-link { margin-top: 0; }
+    .copy-btn { cursor: pointer; font-family: inherit; }
+    .copy-status { font-size: .95rem; color: var(--signal); font-weight: 600; }
 
     footer { border-top: 1px solid var(--rule); padding: 2rem 0; font-size: .9rem; color: var(--graphite); }
     footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; }
@@ -252,7 +256,7 @@
         <a href="#services">Services</a>
         <a href="#process">How it works</a>
         <a href="#about">About</a>
-        <a class="btn btn-solid" href="mailto:contact@emereese.com?subject=Project%20inquiry">Email Kris</a>
+        <a class="btn btn-solid" href="#contact">Contact Kris</a>
       </nav>
     </div>
   </header>
@@ -265,7 +269,7 @@
           <h1>Turn scattered business data into numbers your team trusts.</h1>
           <p class="lede">Emereese is a data and AI consultancy run by Kris Kormu. I build the pipelines, data models, dashboards, and AI workflows that help growing companies answer questions faster and stop arguing about whose spreadsheet is right.</p>
           <div class="actions">
-            <a class="btn btn-solid" href="mailto:contact@emereese.com?subject=Project%20inquiry">Email Kris about a project</a>
+            <a class="btn btn-solid" href="#contact">Contact Kris about a project</a>
             <a class="btn btn-line" href="#services">See services</a>
           </div>
           <p class="note">Florida-based LLC working remotely with teams across the US.</p>
@@ -474,7 +478,11 @@
       <div class="wrap">
         <h2>Have a data or AI problem worth solving?</h2>
         <p>Send a few lines about your business, the tools you use, and what you are trying to figure out. I usually reply within one business day.</p>
-        <a class="email-link" href="mailto:contact@emereese.com?subject=Project%20inquiry">contact@emereese.com</a>
+        <div class="email-row">
+          <a class="email-link" href="mailto:contact@emereese.com?subject=Project%20inquiry">contact@emereese.com</a>
+          <button type="button" class="btn btn-line copy-btn" data-email="contact@emereese.com">Copy email address</button>
+          <span class="copy-status" role="status" aria-live="polite"></span>
+        </div>
       </div>
     </section>
   </main>
@@ -486,6 +494,18 @@
     </div>
   </footer>
 
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.querySelectorAll('.copy-btn').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var email = btn.getAttribute('data-email');
+        var status = btn.parentNode.querySelector('.copy-status');
+        function done(ok) { status.textContent = ok ? 'Copied ' + email : 'Select the address above to copy it'; }
+        if (navigator.clipboard && window.isSecureContext) {
+          navigator.clipboard.writeText(email).then(function () { done(true); }, function () { done(false); });
+        } else { done(false); }
+      });
+    });
+  </script>
 </body>
 </html>
