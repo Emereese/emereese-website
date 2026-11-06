@@ -1,242 +1,492 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Emereese LLC — Enterprise Cloud Data Architecture & High-Performance Analytics</title>
-  <meta name="description" content="Emereese LLC provides high-throughput data pipeline engineering, dbt modeling, and executive Tableau visualization for enterprise systems.">
-  
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  
-  <!-- Lucide Icons CDN -->
-  <script src="https://unpkg.com/lucide@latest"></script>
-  
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            brand: {
-              dark: '#0B0F17',
-              card: '#161F30',
-              border: '#233148',
-              accent: '#38BDF8',
-              accentGlow: 'rgba(56, 189, 248, 0.15)'
-            }
-          }
-        }
-      }
-    }
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Emereese | Data & AI consulting by Kris Kormu</title>
+  <meta name="description" content="Emereese is a data and AI consultancy run by Kris Kormu. Analytics and BI, data engineering, systems integration, AI automation, and fractional data leadership for growing companies.">
+  <link rel="canonical" href="https://emereese.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://emereese.com/">
+  <meta property="og:title" content="Emereese | Data & AI consulting by Kris Kormu">
+  <meta property="og:description" content="Pipelines, dashboards, and AI workflows that help growing companies trust their numbers and decide faster.">
+  <meta name="theme-color" content="#0F1E33">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230F1E33'/%3E%3Cpath d='M20 18h24v6H27v5h15v6H27v5h17v6H20z' fill='%23F7F9FA'/%3E%3Ccircle cx='48' cy='46' r='4' fill='%2334C08F'/%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Emereese LLC",
+    "url": "https://emereese.com/",
+    "email": "contact@emereese.com",
+    "founder": { "@type": "Person", "name": "Kris Kormu" },
+    "areaServed": "United States",
+    "address": { "@type": "PostalAddress", "addressRegion": "FL", "addressCountry": "US" },
+    "description": "Data and AI consulting: analytics and BI, data engineering, systems integration, AI automation, and fractional data leadership."
+  }
   </script>
+
   <style>
-    .glass-card {
-      background: rgba(22, 31, 48, 0.7);
-      backdrop-filter: blur(12px);
-      border: 1px solid rgba(255, 255, 255, 0.08);
+    :root {
+      --paper: #F7F9FA;
+      --white: #FFFFFF;
+      --ink: #0F1E33;
+      --graphite: #4A5565;
+      --rule: #D8DEE6;
+      --signal: #0F7B5F;
+      --signal-bright: #34C08F;
+      --signal-tint: #E2F2EB;
+      --max: 1160px;
+      --font: "Schibsted Grotesk", "Helvetica Neue", Arial, sans-serif;
     }
-    .glass-card:hover {
-      border-color: rgba(56, 189, 248, 0.4);
-      box-shadow: 0 0 25px rgba(56, 189, 248, 0.1);
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      font-family: var(--font);
+      font-size: 1.0625rem;
+      line-height: 1.6;
+      color: var(--ink);
+      background: var(--paper);
+      font-feature-settings: "tnum" 1;
+    }
+    img, svg { display: block; max-width: 100%; }
+    a { color: inherit; }
+    p { margin: 0 0 1rem; }
+    h1, h2, h3 { margin: 0; line-height: 1.1; letter-spacing: -0.02em; }
+
+    :focus-visible { outline: 3px solid var(--signal); outline-offset: 3px; border-radius: 4px; }
+    .skip { position: absolute; left: -9999px; }
+    .skip:focus { left: 1rem; top: 1rem; z-index: 100; background: var(--ink); color: var(--white); padding: .5rem 1rem; }
+
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 1.5rem; }
+
+    /* Header */
+    .site-header {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(247, 249, 250, 0.92);
+      backdrop-filter: saturate(140%) blur(8px);
+      border-bottom: 1px solid var(--rule);
+    }
+    .site-header .wrap { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+    .wordmark { display: flex; align-items: baseline; gap: .5rem; text-decoration: none; }
+    .wordmark b { font-size: 1.35rem; font-weight: 800; letter-spacing: -0.03em; }
+    .wordmark span { font-size: .85rem; color: var(--graphite); }
+    .nav { display: flex; align-items: center; gap: 1.75rem; font-size: .95rem; }
+    .nav a { text-decoration: none; color: var(--graphite); }
+    .nav a:hover { color: var(--ink); }
+
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: .8rem 1.35rem; border-radius: 8px;
+      font-weight: 600; font-size: 1rem; text-decoration: none;
+      border: 1.5px solid var(--ink);
+      transition: background-color .15s ease, color .15s ease;
+      white-space: nowrap;
+    }
+    .btn-solid { background: var(--ink); color: var(--white); }
+    .btn-solid:hover { background: #1D3150; border-color: #1D3150; }
+    .btn-line { background: transparent; color: var(--ink); }
+    .btn-line:hover { background: var(--white); }
+    .nav .btn { padding: .55rem 1rem; font-size: .95rem; color: var(--white); }
+
+    /* Hero */
+    .hero { padding: 5.5rem 0 4.5rem; }
+    .hero .wrap { display: grid; grid-template-columns: 1.05fr 1fr; gap: 3.5rem; align-items: center; }
+    .hero h1 { font-size: clamp(2.4rem, 4.6vw, 3.9rem); font-weight: 800; max-width: 14ch; }
+    .hero .lede { margin-top: 1.5rem; font-size: 1.2rem; color: var(--graphite); max-width: 38rem; }
+    .hero .actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 2rem; }
+    .hero .note { margin-top: 1.25rem; font-size: .95rem; color: var(--graphite); }
+
+    .lineage {
+      background: var(--white);
+      border: 1px solid var(--rule);
+      border-radius: 14px;
+      padding: 1.25rem 1.25rem .75rem;
+    }
+    .lineage figcaption { font-size: .85rem; color: var(--graphite); padding: .5rem .25rem 0; }
+    .lineage .edge { fill: none; stroke: #B8C2CF; stroke-width: 1.5; }
+    .lineage .edge-out { stroke: var(--signal); stroke-width: 2; }
+    .lineage .node rect { fill: var(--paper); stroke: var(--rule); }
+    .lineage .node text { font-family: var(--font); font-size: 12.5px; fill: var(--ink); }
+    .lineage .hub rect { fill: var(--ink); stroke: var(--ink); }
+    .lineage .hub text { fill: var(--white); font-weight: 600; }
+    .lineage .out rect { fill: var(--signal-tint); stroke: #A9D8C4; }
+    .lineage .out text { font-weight: 600; }
+    .lineage .check { fill: var(--signal); }
+
+    @media (prefers-reduced-motion: no-preference) {
+      .lineage .edge { stroke-dasharray: 260; stroke-dashoffset: 260; animation: draw 1.1s ease-out forwards; }
+      .lineage .edge.d2 { animation-delay: .55s; }
+      .lineage .edge.d3 { animation-delay: 1s; }
+      .lineage .out { opacity: 0; animation: appear .4s ease-out forwards; animation-delay: 1.5s; }
+      @keyframes draw { to { stroke-dashoffset: 0; } }
+      @keyframes appear { to { opacity: 1; } }
+    }
+
+    /* Background facts */
+    .facts { border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); background: var(--white); }
+    .facts ul { list-style: none; margin: 0; padding: 1.4rem 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+    .facts li { font-size: .98rem; color: var(--graphite); padding-left: 1rem; border-left: 3px solid var(--signal-bright); }
+    .facts strong { display: block; color: var(--ink); font-weight: 700; }
+
+    /* Sections */
+    section.block { padding: 5.5rem 0; }
+    .block-head { max-width: 46rem; margin-bottom: 3rem; }
+    .block-head h2 { font-size: clamp(1.9rem, 3vw, 2.6rem); font-weight: 800; }
+    .block-head p { margin-top: 1rem; color: var(--graphite); font-size: 1.1rem; }
+
+    /* Services as a spec sheet, grouped by outcome */
+    .svc-group { display: grid; grid-template-columns: 15rem 1fr; gap: 2rem; padding: 2.25rem 0; border-top: 2px solid var(--ink); }
+    .svc-group:last-child { border-bottom: 1px solid var(--rule); }
+    .svc-group > h3 { font-size: 1.25rem; font-weight: 700; }
+    .svc-group > h3 small { display: block; margin-top: .4rem; font-size: .95rem; font-weight: 400; color: var(--graphite); letter-spacing: 0; line-height: 1.45; }
+    .svc-list { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem 2.5rem; }
+    .svc h4 { margin: 0 0 .5rem; font-size: 1.12rem; font-weight: 700; }
+    .svc p { color: var(--graphite); margin-bottom: .75rem; }
+    .svc .tools { font-size: .9rem; color: var(--signal); font-weight: 500; margin: 0; }
+
+    /* Process: a true sequence, so numbered */
+    .process { background: var(--ink); color: var(--white); }
+    .process .block-head p { color: #B9C4D3; }
+    .steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; counter-reset: step; }
+    .steps li { counter-increment: step; padding: 1.5rem 1.5rem 0 0; border-top: 1px solid #2E4363; position: relative; }
+    .steps li::before {
+      content: counter(step);
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 2rem; height: 2rem; border-radius: 50%;
+      background: var(--signal-bright); color: var(--ink); font-weight: 800; font-size: .95rem;
+      margin-bottom: 1rem;
+    }
+    .steps h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: .5rem; }
+    .steps p { color: #B9C4D3; font-size: .98rem; }
+
+    .terms { margin-top: 3.5rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .term { border: 1px solid #2E4363; border-radius: 12px; padding: 1.5rem; }
+    .term h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: .4rem; }
+    .term p { color: #B9C4D3; font-size: .98rem; margin: 0; }
+    .paperwork { margin-top: 2rem; color: #B9C4D3; font-size: .98rem; max-width: 48rem; }
+
+    /* About */
+    .about .wrap { display: grid; grid-template-columns: 17rem 1fr; gap: 3.5rem; align-items: start; }
+    .portrait {
+      aspect-ratio: 4 / 5; border-radius: 14px; background: var(--ink);
+      display: flex; align-items: flex-end; padding: 1.25rem; color: var(--white);
+      overflow: hidden;
+    }
+    .portrait img { width: 100%; height: 100%; object-fit: cover; }
+    .portrait .mono { font-size: 4.5rem; font-weight: 800; letter-spacing: -0.05em; line-height: 1; }
+    .about h2 { font-size: clamp(1.9rem, 3vw, 2.6rem); font-weight: 800; margin-bottom: 1.25rem; }
+    .about .bio { max-width: 42rem; }
+    .about .bio p { color: var(--graphite); }
+    .about .bio p:first-of-type { color: var(--ink); font-size: 1.15rem; }
+    .stack { margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--rule); }
+    .stack h3 { font-size: 1rem; font-weight: 700; margin-bottom: .75rem; }
+    .stack ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: .5rem; }
+    .stack li { font-size: .92rem; padding: .3rem .7rem; border: 1px solid var(--rule); border-radius: 6px; background: var(--white); }
+
+    /* FAQ */
+    .faq { background: var(--white); border-top: 1px solid var(--rule); }
+    .faq-list { max-width: 50rem; }
+    .faq details { border-bottom: 1px solid var(--rule); }
+    .faq summary {
+      cursor: pointer; list-style: none; padding: 1.25rem 2.5rem 1.25rem 0;
+      font-weight: 600; font-size: 1.1rem; position: relative;
+    }
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq summary::after {
+      content: ""; position: absolute; right: .5rem; top: 50%;
+      width: .6rem; height: .6rem; margin-top: -.45rem;
+      border-right: 2px solid var(--ink); border-bottom: 2px solid var(--ink);
+      transform: rotate(45deg); transition: transform .2s ease;
+    }
+    .faq details[open] summary::after { transform: rotate(-135deg); margin-top: -.1rem; }
+    .faq details p { color: var(--graphite); padding-right: 2.5rem; }
+
+    /* Contact */
+    .contact { padding: 6rem 0; }
+    .contact h2 { font-size: clamp(2rem, 3.6vw, 3rem); font-weight: 800; max-width: 22ch; }
+    .contact p { margin-top: 1rem; color: var(--graphite); font-size: 1.15rem; max-width: 40rem; }
+    .email-link {
+      display: inline-block; margin-top: 2rem;
+      font-size: clamp(1.5rem, 3.4vw, 2.5rem); font-weight: 700; letter-spacing: -0.02em;
+      text-decoration: none; border-bottom: 4px solid var(--signal-bright); padding-bottom: .15rem;
+    }
+    .email-link:hover { color: var(--signal); }
+
+    footer { border-top: 1px solid var(--rule); padding: 2rem 0; font-size: .9rem; color: var(--graphite); }
+    footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; }
+
+    /* Responsive */
+    @media (max-width: 960px) {
+      .hero .wrap, .about .wrap { grid-template-columns: 1fr; }
+      .hero { padding-top: 3.5rem; }
+      .facts ul { grid-template-columns: 1fr 1fr; }
+      .svc-group { grid-template-columns: 1fr; gap: 1.25rem; }
+      .steps { grid-template-columns: 1fr 1fr; row-gap: 2rem; }
+      .terms { grid-template-columns: 1fr; }
+      .portrait { max-width: 14rem; }
+    }
+    @media (max-width: 640px) {
+      body { font-size: 1rem; }
+      .nav a:not(.btn) { display: none; }
+      .wordmark span { display: none; }
+      .facts ul, .svc-list, .steps { grid-template-columns: 1fr; }
+      section.block { padding: 4rem 0; }
     }
   </style>
 </head>
-<body class="bg-[#0B0F17] text-slate-200 antialiased font-sans selection:bg-sky-500 selection:text-white">
+<body>
+  <a class="skip" href="#main">Skip to content</a>
 
-  <!-- NAVIGATION BAR -->
-  <nav class="fixed top-0 w-full z-50 glass-card border-b border-slate-800/80">
-    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-      <div class="flex items-center space-x-3">
-        <span class="text-2xl font-extrabold tracking-wider bg-clip-text text-transparent bg-gradient-to-r from-sky-400 via-indigo-300 to-white">
-          EMEREESE
-        </span>
-        <span class="text-xs px-2 py-0.5 rounded font-mono bg-sky-500/10 text-sky-400 border border-sky-500/20">LLC</span>
-      </div>
-      <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-300">
-        <a href="#services" class="hover:text-sky-400 transition-colors">Services</a>
-        <a href="#stack" class="hover:text-sky-400 transition-colors">Capabilities</a>
-        <a href="#engagement" class="hover:text-sky-400 transition-colors">Engagement Model</a>
-        <a href="mailto:contact@emereese.com" class="px-5 py-2.5 rounded-lg bg-sky-500 hover:bg-sky-400 text-slate-950 font-semibold transition-all shadow-lg shadow-sky-500/20">
-          Initiate Engagement
-        </a>
-      </div>
-    </div>
-  </nav>
-
-  <!-- HERO SECTION -->
-  <section class="pt-36 pb-20 px-6 max-w-7xl mx-auto relative">
-    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass-card text-xs font-mono text-sky-400 border border-sky-500/30 mb-8">
-      <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-      Active Entity | C2C & 1099 Ready
-    </div>
-    
-    <h1 class="text-4xl md:text-6xl font-extrabold text-white tracking-tight leading-tight max-w-4xl">
-      Modern Cloud Data Architecture Built for <span class="bg-clip-text text-transparent bg-gradient-to-r from-sky-400 to-indigo-400">Speed & Scale</span>
-    </h1>
-    
-    <p class="mt-6 text-lg md:text-xl text-slate-400 max-w-2xl leading-relaxed">
-      Emereese LLC provides high-throughput data pipeline engineering, automated dbt modeling, and executive Tableau visualization for growth entities and enterprise platforms.
-    </p>
-
-    <div class="mt-10 flex flex-col sm:flex-row gap-4">
-      <a href="#services" class="inline-flex justify-center items-center px-6 py-3.5 rounded-xl bg-sky-500 hover:bg-sky-400 text-slate-950 font-semibold transition-all shadow-lg shadow-sky-500/20">
-        Explore Capabilities <i data-lucide="arrow-right" class="ml-2 w-4 h-4"></i>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="wordmark" href="#top" aria-label="Emereese home">
+        <b>Emereese</b><span>Data &amp; AI consulting</span>
       </a>
-      <a href="mailto:contact@emereese.com" class="inline-flex justify-center items-center px-6 py-3.5 rounded-xl glass-card text-slate-200 hover:text-white hover:bg-slate-800/60 transition-all border border-slate-700/60">
-        Direct Inquiry
-      </a>
+      <nav class="nav" aria-label="Main">
+        <a href="#services">Services</a>
+        <a href="#process">How it works</a>
+        <a href="#about">About</a>
+        <a class="btn btn-solid" href="mailto:contact@emereese.com?subject=Project%20inquiry">Email Kris</a>
+      </nav>
     </div>
+  </header>
 
-    <!-- Trust / Highlights Bar -->
-    <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6 pt-10 border-t border-slate-800/60">
-      <div class="flex items-start space-x-3">
-        <i data-lucide="shield-check" class="w-6 h-6 text-sky-400 shrink-0 mt-1"></i>
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero" id="top">
+      <div class="wrap">
         <div>
-          <h4 class="text-sm font-semibold text-white">Turn-Key Entity Setup</h4>
-          <p class="text-xs text-slate-400 mt-1">Active EIN, dedicated business banking, and general liability coverage ready.</p>
-        </div>
-      </div>
-      <div class="flex items-start space-x-3">
-        <i data-lucide="layers" class="w-6 h-6 text-sky-400 shrink-0 mt-1"></i>
-        <div>
-          <h4 class="text-sm font-semibold text-white">Milestone-Driven SOWs</h4>
-          <p class="text-xs text-slate-400 mt-1">Evaluated on deliverable completion, quality, and pipeline performance.</p>
-        </div>
-      </div>
-      <div class="flex items-start space-x-3">
-        <i data-lucide="clock" class="w-6 h-6 text-sky-400 shrink-0 mt-1"></i>
-        <div>
-          <h4 class="text-sm font-semibold text-white">Asynchronous Execution</h4>
-          <p class="text-xs text-slate-400 mt-1">Off-peak sprint execution paired with full stakeholder sync availability.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CORE SERVICES GRID -->
-  <section id="services" class="py-20 px-6 max-w-7xl mx-auto">
-    <div class="mb-12">
-      <h2 class="text-xs font-mono text-sky-400 uppercase tracking-widest mb-2">Practice Areas</h2>
-      <h3 class="text-3xl font-bold text-white">Core Service Offerings</h3>
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      <!-- Card 1 -->
-      <div class="p-8 rounded-2xl glass-card transition-all duration-300">
-        <div class="w-12 h-12 rounded-xl bg-sky-500/10 border border-sky-500/20 flex items-center justify-center text-sky-400 mb-6">
-          <i data-lucide="database" class="w-6 h-6"></i>
-        </div>
-        <h4 class="text-xl font-bold text-white mb-3">Cloud Data Architecture</h4>
-        <p class="text-slate-400 text-sm leading-relaxed mb-6">
-          Enterprise Snowflake warehouse design, schema optimization, role-based security access frameworks, and cost-containment configurations.
-        </p>
-        <ul class="text-xs text-slate-300 space-y-2">
-          <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 text-sky-400 mr-2"></i> Snowflake Multi-Cluster Setup</li>
-          <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 text-sky-400 mr-2"></i> Row-Level & Dynamic Security</li>
-          <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 text-sky-400 mr-2"></i> Compute Cost Optimization</li>
-        </ul>
-      </div>
-
-      <!-- Card 2 -->
-      <div class="p-8 rounded-2xl glass-card transition-all duration-300">
-        <div class="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 mb-6">
-          <i data-lucide="git-branch" class="w-6 h-6"></i>
-        </div>
-        <h4 class="text-xl font-bold text-white mb-3">Modern Pipeline & ETL</h4>
-        <p class="text-slate-400 text-sm leading-relaxed mb-6">
-          Production dbt data modeling, custom Python automation, SQL query tuning, and reliable API/webhook data integrations.
-        </p>
-        <ul class="text-xs text-slate-300 space-y-2">
-          <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 text-indigo-400 mr-2"></i> dbt Core & Cloud Modeling</li>
-          <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 text-indigo-400 mr-2"></i> Python Scripting & Automation</li>
-          <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 text-indigo-400 mr-2"></i> Automated Data Quality Testing</li>
-        </ul>
-      </div>
-
-      <!-- Card 3 -->
-      <div class="p-8 rounded-2xl glass-card transition-all duration-300">
-        <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 mb-6">
-          <i data-lucide="bar-chart-3" class="w-6 h-6"></i>
-        </div>
-        <h4 class="text-xl font-bold text-white mb-3">Executive BI & Analytics</h4>
-        <p class="text-slate-400 text-sm leading-relaxed mb-6">
-          C-Suite Tableau visualization suites, Salesforce CRM analytics, and automated reporting systems tailored for rapid operational insight.
-        </p>
-        <ul class="text-xs text-slate-300 space-y-2">
-          <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 text-cyan-400 mr-2"></i> Enterprise Tableau Dashboards</li>
-          <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 text-cyan-400 mr-2"></i> Salesforce / CRM Analytics Integration</li>
-          <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 text-cyan-400 mr-2"></i> Financial & Threat Metrics Reporting</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- TECH STACK SHOWCASE -->
-  <section id="stack" class="py-16 px-6 max-w-7xl mx-auto border-t border-slate-800/60">
-    <div class="text-center mb-10">
-      <h3 class="text-sm font-mono text-slate-400 uppercase tracking-widest">Engineered With Proven Enterprise Technologies</h3>
-    </div>
-    <div class="flex flex-wrap justify-center gap-3 max-w-4xl mx-auto">
-      <span class="px-4 py-2 rounded-xl glass-card text-sm font-semibold text-slate-200 border border-slate-700/60">Snowflake</span>
-      <span class="px-4 py-2 rounded-xl glass-card text-sm font-semibold text-slate-200 border border-slate-700/60">dbt</span>
-      <span class="px-4 py-2 rounded-xl glass-card text-sm font-semibold text-slate-200 border border-slate-700/60">Python</span>
-      <span class="px-4 py-2 rounded-xl glass-card text-sm font-semibold text-slate-200 border border-slate-700/60">SQL / PostgreSQL</span>
-      <span class="px-4 py-2 rounded-xl glass-card text-sm font-semibold text-slate-200 border border-slate-700/60">Tableau</span>
-      <span class="px-4 py-2 rounded-xl glass-card text-sm font-semibold text-slate-200 border border-slate-700/60">Salesforce CRM</span>
-      <span class="px-4 py-2 rounded-xl glass-card text-sm font-semibold text-slate-200 border border-slate-700/60">AWS Cloud</span>
-      <span class="px-4 py-2 rounded-xl glass-card text-sm font-semibold text-slate-200 border border-slate-700/60">Security+ Certified</span>
-    </div>
-  </section>
-
-  <!-- ENGAGEMENT & DELIVERY MODEL -->
-  <section id="engagement" class="py-20 px-6 max-w-7xl mx-auto">
-    <div class="p-10 md:p-14 rounded-3xl glass-card relative overflow-hidden border border-slate-700/80">
-      <div class="max-w-3xl">
-        <h2 class="text-xs font-mono text-sky-400 uppercase tracking-widest mb-2">B2B Structure</h2>
-        <h3 class="text-3xl font-bold text-white mb-6">Designed for Seamless Contract Integration</h3>
-        <p class="text-slate-300 text-base leading-relaxed mb-8">
-          Emereese LLC operates on a strict Corp-to-Corp (C2C) and 1099 milestone-driven framework. We interface cleanly with your existing internal teams or vendor management platforms without adding management overhead.
-        </p>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 text-sm">
-          <div class="flex items-start space-x-3">
-            <i data-lucide="check-circle-2" class="w-5 h-5 text-sky-400 shrink-0 mt-0.5"></i>
-            <span class="text-slate-300">Fixed-Scope Statements of Work (SOW)</span>
+          <h1>Turn scattered business data into numbers your team trusts.</h1>
+          <p class="lede">Emereese is a data and AI consultancy run by Kris Kormu. I build the pipelines, data models, dashboards, and AI workflows that help growing companies answer questions faster and stop arguing about whose spreadsheet is right.</p>
+          <div class="actions">
+            <a class="btn btn-solid" href="mailto:contact@emereese.com?subject=Project%20inquiry">Email Kris about a project</a>
+            <a class="btn btn-line" href="#services">See services</a>
           </div>
-          <div class="flex items-start space-x-3">
-            <i data-lucide="check-circle-2" class="w-5 h-5 text-sky-400 shrink-0 mt-0.5"></i>
-            <span class="text-slate-300">Night/Weekend Execution Options</span>
+          <p class="note">Florida-based LLC working remotely with teams across the US.</p>
+        </div>
+
+        <figure class="lineage" aria-labelledby="lineage-cap">
+          <svg viewBox="0 0 520 330" role="img" aria-label="Diagram: data from CRM, marketing, finance, support and spreadsheets flows into a warehouse, through tested models, and out to dashboards, forecasts and AI agents.">
+            <!-- inputs to warehouse -->
+            <path class="edge" d="M118 38 C 160 38, 160 165, 196 165"/>
+            <path class="edge" d="M118 101 C 160 101, 160 165, 196 165"/>
+            <path class="edge" d="M118 165 L 196 165"/>
+            <path class="edge" d="M118 229 C 160 229, 160 165, 196 165"/>
+            <path class="edge" d="M118 292 C 160 292, 160 165, 196 165"/>
+            <!-- warehouse to models -->
+            <path class="edge d2" d="M290 165 L 318 165"/>
+            <!-- models to outputs -->
+            <path class="edge edge-out d3" d="M392 165 C 410 165, 410 70, 424 70"/>
+            <path class="edge edge-out d3" d="M392 165 L 424 165"/>
+            <path class="edge edge-out d3" d="M392 165 C 410 165, 410 260, 424 260"/>
+
+            <g class="node"><rect x="4" y="20" width="114" height="36" rx="8"/><text x="16" y="43">CRM</text></g>
+            <g class="node"><rect x="4" y="83" width="114" height="36" rx="8"/><text x="16" y="106">Marketing</text></g>
+            <g class="node"><rect x="4" y="147" width="114" height="36" rx="8"/><text x="16" y="170">Finance / ERP</text></g>
+            <g class="node"><rect x="4" y="211" width="114" height="36" rx="8"/><text x="16" y="234">Support tickets</text></g>
+            <g class="node"><rect x="4" y="274" width="114" height="36" rx="8"/><text x="16" y="297">Spreadsheets</text></g>
+
+            <g class="node hub"><rect x="196" y="143" width="94" height="44" rx="8"/><text x="210" y="170">Warehouse</text></g>
+            <g class="node"><rect x="318" y="143" width="74" height="44" rx="8"/><text x="330" y="163">Tested</text><text x="330" y="179">models</text></g>
+
+            <g class="node out"><rect x="424" y="50" width="92" height="40" rx="8"/><text x="436" y="75">Dashboards</text></g>
+            <g class="node out"><rect x="424" y="145" width="92" height="40" rx="8"/><text x="436" y="170">Forecasts</text></g>
+            <g class="node out"><rect x="424" y="240" width="92" height="40" rx="8"/><text x="436" y="265">AI agents</text></g>
+          </svg>
+          <figcaption id="lineage-cap">The work, end to end: connect your sources, model and test the data, then put it to use.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Background facts -->
+    <div class="facts">
+      <div class="wrap"><ul>
+        <li><strong>Since 2017</strong>in analytics, BI, and data engineering</li>
+        <li><strong>Led a team</strong>of six analysts, including hiring</li>
+        <li><strong>M.S. Business Analytics</strong>plus a B.S. in analytics and information systems</li>
+        <li><strong>Modern data stack</strong>Snowflake, dbt, Python, Looker, Tableau</li>
+      </ul></div>
+    </div>
+
+    <!-- Services -->
+    <section class="block" id="services">
+      <div class="wrap">
+        <div class="block-head">
+          <h2>What I can help with</h2>
+          <p>Most projects touch more than one of these. Start wherever the pain is, and I will tell you honestly if a smaller fix gets you most of the way.</p>
+        </div>
+
+        <div class="svc-group">
+          <h3>Make sense of your data<small>For teams that have data but not answers</small></h3>
+          <div class="svc-list">
+            <article class="svc">
+              <h4>Analytics &amp; BI</h4>
+              <p>KPI definitions everyone agrees on, executive and team dashboards, self-serve reporting, and measurement for campaigns and experiments, including test-versus-control analysis.</p>
+              <p class="tools">Looker / LookML, Tableau, QuickSight, Streamlit, SQL</p>
+            </article>
+            <article class="svc">
+              <h4>Fractional data lead</h4>
+              <p>A part-time head of data for companies not ready for a full-time hire: roadmap, tool choices, data governance, reviewing analysts' work, and helping you hire the right first data person.</p>
+              <p class="tools">Monthly retainer, a set number of hours</p>
+            </article>
           </div>
-          <div class="flex items-start space-x-3">
-            <i data-lucide="check-circle-2" class="w-5 h-5 text-sky-400 shrink-0 mt-0.5"></i>
-            <span class="text-slate-300">Dedicated Stakeholder Discovery Syncs</span>
+        </div>
+
+        <div class="svc-group">
+          <h3>Build the plumbing<small>For data that lives in too many places</small></h3>
+          <div class="svc-list">
+            <article class="svc">
+              <h4>Data engineering</h4>
+              <p>Warehouse setup, reliable pipelines, and dbt models with automated data quality tests, so reports stop breaking and numbers match across teams.</p>
+              <p class="tools">Snowflake, dbt, Python, SQL</p>
+            </article>
+            <article class="svc">
+              <h4>Systems integration</h4>
+              <p>Connecting the tools your business runs on so data moves between them on its own: CRM, marketing, finance, and project systems, into one reliable source of truth.</p>
+              <p class="tools">Salesforce, HubSpot, NetSuite, Jira, Smartsheet, APIs</p>
+            </article>
           </div>
-          <div class="flex items-start space-x-3">
-            <i data-lucide="check-circle-2" class="w-5 h-5 text-sky-400 shrink-0 mt-0.5"></i>
-            <span class="text-slate-300">Direct Vendor Portal Invoicing</span>
+        </div>
+
+        <div class="svc-group">
+          <h3>Put AI to work<small>For teams that want AI to do real work, not demos</small></h3>
+          <div class="svc-list">
+            <article class="svc">
+              <h4>AI automation</h4>
+              <p>AI workflows that take repetitive back-office and reporting work off your team's plate: drafting recurring reports, sorting and summarizing requests, and answering questions from your own data.</p>
+              <p class="tools">LLM workflows and agents connected to your data</p>
+            </article>
+            <article class="svc">
+              <h4>AI readiness &amp; strategy</h4>
+              <p>An honest look at where AI will and will not pay off for your business, getting your data clean enough for AI to use, and testing AI outputs before anyone relies on them.</p>
+              <p class="tools">Assessment, roadmap, and output evaluation</p>
+            </article>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- FOOTER / CONTACT CTA -->
-  <footer class="py-16 px-6 max-w-7xl mx-auto border-t border-slate-800/80 text-center">
-    <h3 class="text-2xl font-bold text-white mb-3">Ready to Discuss Your Data Infrastructure?</h3>
-    <p class="text-slate-400 text-sm mb-6">Send project specifications or requisition inquiries directly to our team.</p>
-    
-    <a href="mailto:contact@emereese.com" class="inline-flex items-center px-6 py-3 rounded-xl bg-sky-500 hover:bg-sky-400 text-slate-950 font-semibold transition-all shadow-lg shadow-sky-500/20">
-      <i data-lucide="mail" class="w-4 h-4 mr-2"></i> contact@emereese.com
-    </a>
+    <!-- Process -->
+    <section class="block process" id="process">
+      <div class="wrap">
+        <div class="block-head">
+          <h2>How a project works</h2>
+          <p>Clear scope up front, steady progress you can see, and work you can keep running after I hand it off.</p>
+        </div>
+        <ol class="steps">
+          <li>
+            <h3>Talk it through</h3>
+            <p>Email me what is going on. We set up a short call to understand the problem, your tools, and what a good outcome looks like.</p>
+          </li>
+          <li>
+            <h3>Agree on scope</h3>
+            <p>You get a written statement of work with deliverables, timeline, and price, so there are no surprises.</p>
+          </li>
+          <li>
+            <h3>Build and check in</h3>
+            <p>I work asynchronously and send regular written updates, with live check-ins scheduled when they are useful.</p>
+          </li>
+          <li>
+            <h3>Hand off</h3>
+            <p>Documentation and a walkthrough, so your team understands what was built and can keep it running.</p>
+          </li>
+        </ol>
 
-    <div class="mt-12 text-xs text-slate-500 font-mono">
-      © <span id="year"></span> Emereese LLC. All rights reserved. | emereese.com
+        <div class="terms">
+          <div class="term">
+            <h3>Fixed-scope project</h3>
+            <p>A defined deliverable at an agreed price. Best for a dashboard, pipeline, integration, or audit.</p>
+          </div>
+          <div class="term">
+            <h3>Monthly retainer</h3>
+            <p>A set number of hours each month for ongoing work or fractional data leadership.</p>
+          </div>
+          <div class="term">
+            <h3>Hourly advisory</h3>
+            <p>Expert help on demand: a second opinion on your data stack, a model review, or unblocking your team.</p>
+          </div>
+        </div>
+        <p class="paperwork">Emereese LLC contracts as a business: corp-to-corp or 1099, a W-9 on request, and invoicing through your vendor portal if you use one.</p>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="block about" id="about">
+      <div class="wrap">
+        <div class="portrait">
+          <!-- To use a photo, replace the span below with: <img src="kris.jpg" alt="Kris Kormu"> -->
+          <span class="mono" aria-hidden="true">KK</span>
+        </div>
+        <div class="bio">
+          <h2>Hi, I'm Kris.</h2>
+          <p>I have spent close to a decade turning messy business data into reporting that leaders actually use, working across B2B software, retail e-commerce, and automotive marketing.</p>
+          <p>My work has ranged from hands-on SQL and dbt modeling to leading a team of six analysts. What I do best is take a vague business question, figure out what data would actually answer it, and build something reusable instead of a one-off report.</p>
+          <p>I also train and evaluate AI models on coding and data tasks, so I have a practical sense of what today's AI does well and where it still needs a human checking its work.</p>
+          <p>I hold an M.S. in Business Analytics from Ohio University and a B.S. in Business Analytics and Information Systems from the University of South Florida. I founded Emereese LLC to work directly with companies that want senior data help without a full-time hire.</p>
+
+          <div class="stack">
+            <h3>Tools I work in</h3>
+            <ul>
+              <li>SQL</li><li>Snowflake</li><li>dbt</li><li>Python</li><li>Looker / LookML</li><li>Tableau</li>
+              <li>QuickSight</li><li>Streamlit</li><li>Salesforce</li><li>HubSpot</li><li>NetSuite</li><li>Jira</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="block faq" id="faq">
+      <div class="wrap">
+        <div class="block-head">
+          <h2>Common questions</h2>
+        </div>
+        <div class="faq-list">
+          <details>
+            <summary>Do you work with small companies?</summary>
+            <p>Yes. Many of the best projects are at companies with no data team yet, where one person cleaning up the foundations makes a big difference. I scope work to fit your budget.</p>
+          </details>
+          <details>
+            <summary>Can you work with the tools we already have?</summary>
+            <p>Usually, yes. I would rather improve what you have than sell you a new stack. If a tool is genuinely holding you back, I will explain why and what it would cost to change.</p>
+          </details>
+          <details>
+            <summary>How do you handle our data and access?</summary>
+            <p>I sign an NDA before seeing anything sensitive, ask only for the access a project needs, and work inside your systems wherever possible rather than copying data out.</p>
+          </details>
+          <details>
+            <summary>How is pricing set?</summary>
+            <p>Most work is a fixed price per project, agreed before it starts. Ongoing help is a monthly retainer. Send me a short description and I will reply with an approach and an estimate.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact" id="contact">
+      <div class="wrap">
+        <h2>Have a data or AI problem worth solving?</h2>
+        <p>Send a few lines about your business, the tools you use, and what you are trying to figure out. I usually reply within one business day.</p>
+        <a class="email-link" href="mailto:contact@emereese.com?subject=Project%20inquiry">contact@emereese.com</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>&copy; <span id="year">2026</span> Emereese LLC, a Florida limited liability company.</span>
+      <span>Data &amp; AI consulting by Kris Kormu</span>
     </div>
   </footer>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-    lucide.createIcons();
-  </script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
