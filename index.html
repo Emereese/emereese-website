@@ -176,12 +176,10 @@
     /* About */
     .about .wrap { display: grid; grid-template-columns: 17rem 1fr; gap: 3.5rem; align-items: start; }
     .portrait {
-      aspect-ratio: 4 / 5; border-radius: 14px; background: var(--ink);
-      display: flex; align-items: flex-end; padding: 1.25rem; color: var(--white);
-      overflow: hidden;
+      aspect-ratio: 4 / 5; border-radius: 14px; background: #DCE3EB;
+      overflow: hidden; border: 1px solid var(--rule);
     }
     .portrait img { width: 100%; height: 100%; object-fit: cover; }
-    .portrait .mono { font-size: 4.5rem; font-weight: 800; letter-spacing: -0.05em; line-height: 1; }
     .about h2 { font-size: clamp(1.9rem, 3vw, 2.6rem); font-weight: 800; margin-bottom: 1.25rem; }
     .about .bio { max-width: 42rem; }
     .about .bio p { color: var(--graphite); }
@@ -329,7 +327,7 @@
           <div class="svc-list">
             <article class="svc">
               <h4>Analytics &amp; BI</h4>
-              <p>KPI definitions everyone agrees on, executive and team dashboards, self-serve reporting, and measurement for campaigns and experiments, including test-versus-control analysis.</p>
+              <p>KPI definitions everyone agrees on, executive and team dashboards, self-serve reporting, test-versus-control measurement for campaigns and experiments, and security and risk reporting such as threat metrics, detection and response times, and phishing and training results.</p>
               <p class="tools">Looker / LookML, Tableau, QuickSight, Streamlit, SQL</p>
             </article>
             <article class="svc">
@@ -422,12 +420,11 @@
     <section class="block about" id="about">
       <div class="wrap">
         <div class="portrait">
-          <!-- To use a photo, replace the span below with: <img src="kris.jpg" alt="Kris Kormu"> -->
-          <span class="mono" aria-hidden="true">KK</span>
+          <img src="kris.jpg" alt="Kris Kormu" width="640" height="800">
         </div>
         <div class="bio">
           <h2>Hi, I'm Kris.</h2>
-          <p>I have spent close to a decade turning messy business data into reporting that leaders actually use, working across B2B software, retail e-commerce, and automotive marketing.</p>
+          <p>I have spent close to a decade turning messy business data into reporting that leaders actually use, working across B2B software (including cybersecurity), retail e-commerce, and automotive marketing.</p>
           <p>My work has ranged from hands-on SQL and dbt modeling to leading a team of six analysts. What I do best is take a vague business question, figure out what data would actually answer it, and build something reusable instead of a one-off report.</p>
           <p>I also train and evaluate AI models on coding and data tasks, so I have a practical sense of what today's AI does well and where it still needs a human checking its work.</p>
           <p>I hold an M.S. in Business Analytics from Ohio University and a B.S. in Business Analytics and Information Systems from the University of South Florida. I founded Emereese LLC to work directly with companies that want senior data help without a full-time hire.</p>
@@ -436,7 +433,8 @@
             <h3>Tools I work in</h3>
             <ul>
               <li>SQL</li><li>Snowflake</li><li>dbt</li><li>Python</li><li>Looker / LookML</li><li>Tableau</li>
-              <li>QuickSight</li><li>Streamlit</li><li>Salesforce</li><li>HubSpot</li><li>NetSuite</li><li>Jira</li>
+              <li>QuickSight</li><li>Klipfolio</li><li>Streamlit</li><li>Salesforce</li><li>HubSpot</li><li>NetSuite</li>
+              <li>Jira</li><li>Smartsheet</li><li>Git / GitHub</li><li>Docker</li><li>LLM APIs</li>
             </ul>
           </div>
         </div>
